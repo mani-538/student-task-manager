@@ -12,9 +12,22 @@ addTaskBtn.addEventListener("click", function () {
 
     const li = document.createElement("li");
 
+    const checkbox = document.createElement("input");
+checkbox.type = "checkbox";
+
 const deleteBtn = document.createElement("button");
 
 li.textContent = taskText + " ";
+
+checkbox.addEventListener("change", function () {
+
+    if (checkbox.checked) {
+        li.style.textDecoration = "line-through";
+    } else {
+        li.style.textDecoration = "none";
+    }
+
+});
 
 deleteBtn.textContent = "Delete";
 

@@ -62,3 +62,7 @@ h1 {
 #taskList {
     list-style: none;
 }
+
+#taskList li {
+    margin-bottom: 10px;
+}
