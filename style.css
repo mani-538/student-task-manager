@@ -66,3 +66,20 @@ h1 {
 #taskList li {
     margin-bottom: 10px;
 }
+
+#taskList li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 10px;
+    margin-bottom: 10px;
+
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#taskList button {
+    padding: 5px 10px;
+    cursor: pointer;
+}

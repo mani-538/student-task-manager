@@ -27,7 +27,11 @@ function saveTasks() {
 function createTask(taskText, completed = false) {
     const li = document.createElement("li");
 
-    li.dataset.completed = "false";
+    li.dataset.completed = String(completed);
+
+    if (completed) {
+    li.style.textDecoration = "line-through";
+}
 
 const checkbox = document.createElement("input");
 checkbox.type = "checkbox";
@@ -46,11 +50,7 @@ checkbox.addEventListener("change", function () {
         li.style.textDecoration = "none";
     }
 
-    li.dataset.completed = completed;
-
-    if (completed) {
-    li.style.textDecoration = "line-through";
-}
+    li.dataset.completed = String(checkbox.checked);
 
     saveTasks();
 
@@ -93,7 +93,7 @@ allBtn.addEventListener("click", function () {
     const tasks = taskList.children;
 
     for (let task of tasks) {
-        task.style.display = "block";
+        task.style.display = "flex";
     }
 
 });
@@ -107,7 +107,7 @@ activeBtn.addEventListener("click", function () {
         if (task.dataset.completed === "true") {
             task.style.display = "none";
         } else {
-            task.style.display = "block";
+            task.style.display = "flex";
         }
 
     }
@@ -121,7 +121,7 @@ completedBtn.addEventListener("click", function () {
     for (let task of tasks) {
 
         if (task.dataset.completed === "true") {
-            task.style.display = "block";
+            task.style.display = "flex";
         } else {
             task.style.display = "none";
         }
